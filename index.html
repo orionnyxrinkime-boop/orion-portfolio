@@ -10,10 +10,19 @@
 
   <!-- 1. HERO -->
   <header id="accueil">
-    <nav>
-      <h2>Orion</h2>
-      <img src="logo-orion.png" alt="Orion Logo" class="logo">
-      <ul>
+    <nav class="main-nav">
+      <div id="profil">
+        <img src="logo-orion.png" alt="Orion Logo" class="logo">
+        <h2>Orion</h2>
+      </div>
+
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu">
         <li><a href="#apropos">À propos</a></li>
         <li><a href="#competences">Compétences</a></li>
         <li><a href="#projets">Projets</a></li>
@@ -84,7 +93,7 @@
         <h3>Histoire Interactive</h3>
         <p>Mini-jeu web type "livre dont vous êtes le héros". Les choix du joueur influencent la fin.</p>
         <span class="tech">JavaScript</span>
-        <a href="#">Jouer à la démo</a>
+        <a href="https://la-nuit-des-lanternes.netlify.app">Jouer à la démo</a>
       </div>
 
       <div class="project-card" data-category="reseau">
@@ -112,13 +121,14 @@
     <h2>Contact</h2>
     <p>Disponible pour des missions freelance</p>
     <div id="contact-link">
-        <p><a href="mailto:orionnyxrinkime@gmail.com" class="btn">📧Email : orionnyxrinkime@gmail.com</a></p>
-        <p><a href="https://github.com/orionnyxrinkime-boop">🐈‍⬛💻GitHub : github.com/orionnyxrinkime-boop</a></p>
-        <p><a href="https://wa.me/242050007327" target="_blank" class="btn btn-whatsapp">💬WhatsApp</a></p>
-        <p>© 2026 Orion Nyx Rinkime</p>
+      <p><a href="mailto:orionnyxrinkime@gmail.com" class="btn">📧Email : orionnyxrinkime@gmail.com</a></p>
+      <p><a href="https://github.com/orionnyxrinkime-boop">🐈‍⬛💻GitHub : github.com/orionnyxrinkime-boop</a></p>
+      <p><a href="https://wa.me/242050007327" target="_blank" class="btn btn-whatsapp">💬WhatsApp</a></p>
+      <p>© 2026 Orion Nyx Rinkime</p>
     </div>
- </footer>
+  </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+

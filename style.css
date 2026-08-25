@@ -1,10 +1,9 @@
-/* ====== VARIABLES & BASE ====== */
 :root {
   --fond: #0f172a;
   --carte: #1e293b;
   --texte: #e2e8f0;
   --accent: #38bdf8;
-  --accent2: #25D366; /* WhatsApp */
+  --accent2: #25D366;
 }
 
 * {
@@ -31,7 +30,6 @@ h1, h2, h3 {
   margin-bottom: 20px;
 }
 
-/* ====== NAV & HERO ====== */
 header {
   min-height: 90vh;
   display: flex;
@@ -41,7 +39,7 @@ header {
   background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
 }
 
-nav {
+.main-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -49,40 +47,121 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: rgba(15, 23, 42, 0.8);
-  backdrop-filter: blur(10px);
+  padding: 18px 24px;
+  background: rgba(15, 23, 42, 0.75);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
 }
 
-nav ul {
+.main-nav:hover {
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.35);
+}
+
+.nav-menu {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 20px;
+  transition: all 0.3s ease;
 }
 
-nav a {
+.nav-menu a {
   color: var(--texte);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.25s ease, transform 0.25s ease, text-shadow 0.25s ease;
+  position: relative;
 }
 
-nav a:hover {
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-menu a:hover {
   color: var(--accent);
+  transform: translateY(-1px);
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
 }
 
-#profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+.nav-menu a:hover::after {
+  transform: scaleX(1);
 }
- 
+
+#profil {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  text-align: left;
+}
+
+#profil h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
 .logo {
-     width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.25);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 46px;
+  height: 46px;
+  background: rgba(148, 163, 184, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 10px 8px;
+  transition: all 0.25s ease;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--texte);
+  border-radius: 999px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle:hover {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .hero-content h1 {
@@ -96,7 +175,6 @@ nav a:hover {
   margin-bottom: 30px;
 }
 
-/* ====== BOUTONS ====== */
 .btn {
   display: inline-block;
   background: var(--accent);
@@ -106,26 +184,29 @@ nav a:hover {
   text-decoration: none;
   font-weight: bold;
   margin: 5px;
-  transition: 0.3s;
+  box-shadow: 0 10px 22px rgba(56, 189, 248, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  opacity: 0.9;
+  opacity: 0.96;
+  box-shadow: 0 14px 26px rgba(56, 189, 248, 0.4);
 }
 
 .btn-outline {
   background: transparent;
   border: 2px solid var(--accent);
   color: var(--accent);
+  box-shadow: 0 8px 18px rgba(56, 189, 248, 0.18);
 }
 
 .btn-whatsapp {
   background: var(--accent2);
   color: white;
+  box-shadow: 0 10px 22px rgba(37, 211, 102, 0.28);
 }
 
-/* ====== COMPETENCES - ONGLETS ====== */
 .tabs {
   display: flex;
   gap: 10px;
@@ -165,7 +246,6 @@ nav a:hover {
   font-size: 0.9rem;
 }
 
-/* ====== PROJETS ====== */
 .filters {
   display: flex;
   gap: 10px;
@@ -213,7 +293,6 @@ nav a:hover {
   font-weight: bold;
 }
 
-/* ====== SERVICES ====== */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -228,7 +307,6 @@ nav a:hover {
   border: 1px solid #334155;
 }
 
-/* ====== CONTACT ====== */
 footer {
   text-align: center;
   border-top: 1px solid #334155;
@@ -242,15 +320,64 @@ footer {
   margin: 20px 0;
 }
 
-/* ====== MOBILE ====== */
 @media (max-width: 768px) {
-  nav ul {
-    display: none; /* On fera un menu burger plus tard */
+  .main-nav {
+    padding: 14px 16px;
+    flex-wrap: wrap;
+    gap: 12px;
   }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    background: rgba(15, 23, 42, 0.97);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.35);
+  }
+
+  .nav-menu.open {
+    display: flex;
+    animation: fadeDown 0.25s ease;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(148, 163, 184, 0.04);
+  }
+
+  .nav-menu a:hover {
+    background: rgba(56, 189, 248, 0.08);
+  }
+
   .hero-content h1 {
     font-size: 2rem;
   }
-  .logo {
-    height: 50px;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
