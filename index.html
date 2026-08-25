@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nyx - Dev Web & Réseaux</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. HERO -->
+  <header id="accueil">
+    <nav>
+      <h2>Orion</h2>
+      <img src="logo-orion.png" alt="Orion Logo" class="logo">
+      <ul>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>Développeur Web & Administrateur Réseaux</h1>
+      <p>Je crée des sites vitrines et je configure des réseaux pour TPE & particuliers à Pointe-Noire</p>
+      <a href="#projets" class="btn">Voir mes projets</a>
+      <a href="#contact" class="btn btn-outline">Me contacter</a>
+    </div>
+  </header>
+
+  <!-- 2. A PROPOS -->
+  <section id="apropos">
+    <h2>À propos</h2>
+    <p>Après 3 ans de Licence en Réseaux et Télécommunications aux instituts <strong>2i</strong> et <strong>Henri Lopez</strong>, je me forme actuellement au Développement Web.</p>
+    <p>Passionné par le lien entre le code et l’infrastructure, j’aime autant coder un site en HTML/CSS/JS que déployer un serveur sous Ubuntu ou configurer un réseau sous Cisco Packet Tracer.</p>
+    <p>Je propose mes services en freelance pour la création de sites et l’installation de petits réseaux.</p>
+  </section>
+
+  <!-- 3. COMPETENCES -->
+  <section id="competences">
+    <h2>Mes Compétences</h2>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="web">Développement Web</button>
+      <button class="tab-btn" data-tab="reseau">Réseaux & Systèmes</button>
+      <button class="tab-btn" data-tab="outils">Outils & Mobile</button>
+    </div>
+    <div class="tab-content active" id="web">
+      <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive</span><span>Git/GitHub</span>
+    </div>
+    <div class="tab-content" id="reseau">
+      <span>Cisco Packet Tracer</span><span>Ubuntu Server</span><span>Windows Server</span><span>Active Directory</span><span>Apache</span><span>Samba</span><span>VMware</span>
+    </div>
+    <div class="tab-content" id="outils">
+      <span>Android Studio</span><span>Kotlin - Bases</span><span>Développement assisté par IA</span>
+    </div>
+  </section>
+
+  <!-- 4. PROJETS -->
+  <section id="projets">
+    <h2>Mes Projets</h2>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="reseau">Réseau</button>
+      <button class="filter-btn" data-filter="mobile">Mobile</button>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card" data-category="web">
+        <h3>Sites Événementiels</h3>
+        <p>Création de sites one-page pour anniversaires, Saint-Valentin et Noël. Design responsive et animé.</p>
+        <span class="tech">HTML, CSS, JS</span>
+        <a href="#">Voir la démo</a>
+      </div>
+
+      <div class="project-card" data-category="mobile">
+        <h3>Nyx Play - Lecteur Multimédia</h3>
+        <p>Application Android de lecture musique/vidéo développée avec l’assistance d’IA. Projet d’apprentissage.</p>
+        <span class="tech">Kotlin, IA</span>
+        <a href="#">Projet privé</a>
+      </div>
+
+      <div class="project-card" data-category="web">
+        <h3>Histoire Interactive</h3>
+        <p>Mini-jeu web type "livre dont vous êtes le héros". Les choix du joueur influencent la fin.</p>
+        <span class="tech">JavaScript</span>
+        <a href="#">Jouer à la démo</a>
+      </div>
+
+      <div class="project-card" data-category="reseau">
+        <h3>Lab Réseau & Serveurs</h3>
+        <p>Mise en place de serveurs Web Apache, Samba, et domaine Active Directory en virtuel VMware.</p>
+        <span class="tech">Packet Tracer, Ubuntu, Windows Server</span>
+        <a href="#">Voir le schéma</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SERVICES -->
+  <section id="services">
+    <h2>Services Freelance</h2>
+    <div class="services-grid">
+      <div>Création de Site Vitrine</div>
+      <div>CV & Portfolio en ligne</div>
+      <div>Réseau Domestique/PME</div>
+      <div>Sécurité Réseau</div>
+    </div>
+  </section>
+
+  <!-- 6. CONTACT -->
+  <footer id="contact">
+    <h2>Contact</h2>
+    <p>Disponible pour des missions freelance</p>
+    <div id="contact-link">
+        <p><a href="mailto:orionnyxrinkime@gmail.com" class="btn">📧Email : orionnyxrinkime@gmail.com</a></p>
+        <p><a href="https://github.com/orionnyxrinkime-boop">🐈‍⬛💻GitHub : github.com/orionnyxrinkime-boop</a></p>
+        <p><a href="https://wa.me/242050007327" target="_blank" class="btn btn-whatsapp">💬WhatsApp</a></p>
+        <p>© 2026 Orion Nyx Rinkime</p>
+    </div>
+ </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
