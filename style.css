@@ -48,6 +48,7 @@ nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
   background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(10px);
@@ -70,7 +71,7 @@ nav a:hover {
 }
 
 .logo {
-    height: 40px;
+    height: 60px;
     width: auto;
 }
 
@@ -238,5 +239,8 @@ footer {
   }
   .hero-content h1 {
     font-size: 2rem;
+  }
+  .logo {
+    height: 50px;
   }
 }
